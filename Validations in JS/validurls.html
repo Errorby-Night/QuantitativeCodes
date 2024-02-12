@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head><title>URL Validations</title></head>
+    <body>
+        <h1>URL Validations</h1>
+        <p>Enter FTP Site link:</p>
+        <textarea id="ftp"></textarea>
+        <p id="validftp"></p>
+        <button onclick='validateFtp()'>Validate FTP URL</button>
+        <script>
+            function validateFtp(){
+                var x = document.getElementById("ftp").value;
+                var y = document.getElementById("validftp");
+                let regex = /^(ftp:\/\/)?([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}:[0-9]{1,5})$/;
+                if(regex.test(x) == false){
+                    y.innerHTML = "Bad Link";
+                    y.style.color = "Red";
+                    y.style.fontSize = "xx-small";
+                }
+                else{
+                    y.innerHTML = "";
+                }
+            }
+        </script>
+    </body>
+</html>

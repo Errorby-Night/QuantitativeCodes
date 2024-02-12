@@ -21,7 +21,6 @@ class simplesieve{
             if(flag[i])
                 System.out.print(i+ " ");
         }
-        
     }
 
     public static void main(String[] args) {

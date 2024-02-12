@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>URL</title>
+    </head>
+    <body>
+        <h1>URL Check</h1>
+        <p>Enter URL</p>
+        <textarea id="url"></textarea>
+        <p id="ifvalid"></p>
+        <button onclick="validURL()">Check!</button>
+        <script>
+            function validURL(){
+                var url = document.getElementById("url").value;
+                var o = document.getElementById("ifvalid");
+
+                let regex = /^(https?:\/\/)?(www\.)?[a-zA-Z]+\.[a-zA-Z]{2,3}(\/?[a-zA-Z])*$/;
+
+                if(regex.test(url) == false){
+                    o.innerHTML = "Invalid URL";
+                    o.style.color = "red";
+                    o.style.fontSize="xx-small";
+                }
+                else{
+                    o.innerHTML = "";
+                }
+            }
+        </script>
+    </body>
+</html>

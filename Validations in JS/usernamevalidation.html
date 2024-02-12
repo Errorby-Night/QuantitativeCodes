@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+    <title>Registration</title>
+</head>
+<body>
+    <h1>Registration</h1>
+        <p>Username:</p>
+        <input type="text" id="username" name="username">
+        <p id="validuser"></p>
+        <p>Password:</p>
+        <input type="password" id="pass" name="pass">
+        <p id="validpass"></p>
+        <p>Pincode:</p>
+        <input type="number" id="pincode">
+        <p id="validpin"></p>
+        <p>Registration Number:</p>
+        <input type="text" id="regno" name="regno"/>
+        <p id="validreg"></p>
+        <button onclick="validate()">Submit</button>
+    <script>
+        function checkUname(){
+            var uname = document.getElementById("username").value;
+            let regex = /^[a-zA-Z][a-zA-Z0-9_-]{2,15}$/;
+            return regex.test(uname);
+        }
+
+        function checkPass(){
+            var pass = document.getElementById("pass").value;
+            let regex = /^[a-zA-Z0-9][a-z0-9$&*@!#%?]{7,30}$/i;
+            return regex.test(pass);
+        }
+
+        function checkPin(){
+            var p = document.getElementById("pincode").value;
+            let regex = /^[0-9]{6}$/;
+            return regex.test(p);
+        }
+
+        function checkReg(){
+            var r = document.getElementById("regno").value;
+            let regex = /^[0-9]{2}[A-Z]{3}[0-9]{4}$/;
+            return regex.test(r);
+        }
+
+        function validate(){
+            var x = document.getElementById("validuser");
+            var y = document.getElementById("validpass");
+            var z = document.getElementById("validpin");
+            var k = document.getElementById("validreg");
+
+            if(!checkUname()){
+                x.innerHTML = "Username is invalid!";
+                x.style.color = "Red";
+                x.style.fontSize="xx-small";
+            }
+            else{
+                x.innerHTML = "";
+            }
+
+            if(!checkPass()){
+                y.innerHTML = "Password is invalid!";
+                y.style.color = "Red";
+                y.style.fontSize="xx-small";
+            }
+            else{
+                y.innerHTML = "";
+            }
+
+            if(!checkPin()){
+                z.innerHTML = "Pincode is invalid!";
+                z.style.color = "Red";
+                z.style.fontSize="xx-small";
+            }
+            else{
+                z.innerHTML = "";
+            }
+
+            if(!checkReg()){
+                k.innerHTML = "Registration Number is invalid!";
+                k.style.color = "Red";
+                k.style.fontSize="xx-small";
+            }
+            else{
+                k.innerHTML = "";
+            }
+        }
+    </script>
+</body>
