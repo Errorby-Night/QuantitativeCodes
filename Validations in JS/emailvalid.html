@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Email</title>
+    </head>
+    <body>
+        <h1>Email</h1>
+        <p>Email:</p>
+        <input type="text" id="email">
+        <p id="output"></p>
+        <button onclick="validEmail()">Check</button>
+        <script>
+            function validEmail(){
+                var x = document.getElementById("email").value;
+                var y = document.getElementById("output");
+
+                let regex = /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/;
+                y.innerHTML = regex.test(x);
+                y.style.fontSize = "xx-large";
+            }
+        </script>
+    </body>
+</html>
