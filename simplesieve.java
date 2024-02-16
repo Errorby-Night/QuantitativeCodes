@@ -1,34 +1,27 @@
 import java.util.*;
 class simplesieve{
-    public void ssieve(int n){
-        boolean flag[] = new boolean[n+1];
-        for(int i = 0; i < n; i++){
-            flag[i] = true;
-        }
-        for(int i = 2; i <= (int)(Math.ceil(Math.sqrt(n)) + 1); i++){
-            if(flag[i]){
-                for(int j = 2; (j * i) <= n; j++){
-                    flag[j*i] = false;
+    public static void sieve(int n){
+
+        boolean prime[] = new boolean[n+1];
+
+        for(int i = 2; i <= Math.sqrt(n); i++){
+            if(prime[i] == false){
+                for(int j = i*i; j <= n; j+=i){
+                    prime[j] = true;
                 }
             }
         }
-        printPrimes(flag, n);
-    }
-
-    public void printPrimes(boolean [] flag , int n ){
-        System.out.println("The Prime Numbers are: ");
-        for(int i = 2; i <= n; i++){
-            if(flag[i])
-                System.out.print(i+ " ");
-        }
+        for(int i = 0; i <= n; i++)
+            if(!prime[i])
+                System.out.print(i + " ");
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter a number: ");
-        int n = sc.nextInt();
-        simplesieve s = new simplesieve();
-        s.ssieve(n);
+        int n;
+        System.out.println("Enter the value: ");
+        n = sc.nextInt();
+        sieve(n);
         sc.close();
     }
 }

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1 id="heads"></h1>
+        <input type="date" id="cal">
+        <button onclick="getVal()">Click</button>
+        <script>
+            var x = new Date();
+            console.log(x.getFullYear());
+            console.log(x.getMonth()+1); //January is 0!
+            console.log(x.getDate());
+            console.log(x.getDay());
+            console.log(x.getTime());
+            console.log(x.getHours());
+            console.log(x.getMinutes());
+            console.log(x.getSeconds());
+            console.log(x.toISOString());
+            function getVal(){
+                var a = document.getElementById("cal").value;
+                var b = new Date(a);
+                document.getElementById("heads").innerHTML = b.toDateString();
+
+            }
+        </script>
+    </body>
+</html>

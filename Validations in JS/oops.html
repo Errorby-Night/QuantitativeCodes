@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1 id="diss"></h1>
+        <h1 id="dis"></h1>
+        <h2 id="shit"></h2>
+        <script>
+            var Emp = {Name: "Srijan", Age:"21", Phone:"7318647111"};
+            document.getElementById( "diss" ).innerHTML=Emp.Name + ", " + Emp.Age + "-Years-Old, Contact No : "+ Emp.Phone;
+
+
+            function Employee(Name, Age, Phone){
+                    this.Name= Name;
+                    this.Age = Age;
+                    this.Phone = Phone;
+                }
+            var x = new Employee("Shubhi", "22", "1234");
+            document.getElementById("dis").innerHTML=x.Name + " " + x.Age + " " + x.Phone;
+
+            let a = {
+                Name:"Srijan",
+                Age:"21",
+                Address:{
+                    Street: "Roy Para",
+                    City: "Krishnagar"
+                }, 
+                getFunction:function(){
+                    document.getElementById("shit").innerHTML = "name:" + a.Name + "Address:Street-" + a.Address.Street+ ",City-"+a.City;
+                }
+            }
+            a.getFunction();
+
+
+            let capacity = [
+                {
+                    Name:"Srijan",
+                    Age:"21",
+                    Reg:"230131"
+                },
+                {
+                    Name:"Shubhi",
+                    Age:"22",
+                    Reg:"230200"
+                }
+            ]
+            function ss(){
+                console.log(capacity[0].Reg);
+                console.log(capacity[1].Reg);
+                console.log(capacity[0].Name);
+                console.log(capacity[1].Name);
+            }
+            ss();
+        </script>
+    </body>
+</html>
